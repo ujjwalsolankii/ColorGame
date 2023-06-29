@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>accordian</title>
+</head>
+<style>
+  summary{
+    list-style-type: disc;
+  }
+  details[open] summary{
+    list-style-type:square;
+  }
+
+  * {
+  box-sizing: border-box;
+}
+list{
+  display: flex;
+  flex: auto;
+  border: 1px solid white;
+  width: full;
+}
+li{
+  flex: auto;
+  justify-content: space-between;
+  width: 100%;
+}
+.accordian {
+  flex: auto;
+  justify-content: space-around;
+  width: 25%;
+  padding: 10px;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media screen and (max-width: 900px) {
+  .accordian , li {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .accordian , li {
+    width: 100%;
+  }
+}
+</style>
+
+
+<body style="background-color:black; font-family: 'Brush Script MT', cursive; color: white;">
+  <div style="display: flex; justify-content:center">
+    <details>
+      <summary>All Color Names</summary>
+      <div class="list">
+        <ol>
+          <li>red</li>
+          <li>yellow</li>
+          <li>blue</li>
+          <li>purple</li>
+          <li>orange</li>
+          <li>pink</li>
+          <li>brown</li>
+          <li>gray</li>
+          <li>aqua</li>
+          <li>chocalate</li>
+          <li>crimson</li>
+          <li>cyan</li>
+          <li>gold</li>
+          <li>tomato</li>
+          <li>teal</li>
+          <li>plum</li>
+          <li>wheat</li>
+          <li>olive</li>
+          <li>hotpink</li>
+          <li>burlywood</li>
+        </ol>
+      </div>
+    </details>  
+  </div>
+  
+  <!-- //main -->
+  <div style="display: flex; justify-content:space-around; flex-wrap: wrap;" class="container">
+    <div class="accordian">
+        <h3 style="cursor: pointer; color: red; width: 100%;">My Color is</h3>
+        <p style="display: none; color: red;">red</p>
+    </div>
+    <div class="accordian">
+      <h3 style="cursor: pointer; color: yellow;">My Color is</h3>
+      <p style="display: none; color: yellow;">yellow</p>
+    </div>
+    <div class="accordian">
+      <h3 style="cursor: pointer; color: blue;">My Color is</h3>
+      <p style="display: none; color: blue;">blue</p>
+    </div>
+    <div class="accordian">
+      <h3 style="cursor: pointer; color: purple;">My Color is</h3>
+      <p style="display: none; color: purple;">purple</p>
+    </div>
+    <div class="accordian">
+      <h3 style="cursor: pointer; color: orange;">My Color is</h3>
+      <p style="display: none; color: orange;">orange</p>
+    </div>
+    <div class="accordian">
+      <h3 style="cursor: pointer; color: pink;">My Color is</h3>
+      <p style="display: none; color: pink;">pink</p>
+    </div>
+    <div class="accordian">
+      <h3 style="cursor: pointer; color: brown;">My Color is</h3>
+      <p style="display: none; color: brown;">brown</p>
+    </div>
+    <div class="accordian">
+      <h3 style="cursor: pointer; color:gray;">My Color is</h3>
+      <p style="display: none; color: gray;">gray</p>
+    </div>
+    <div class="accordian">
+      <h3 style="cursor: pointer; color:aqua;">My Color is</h3>
+      <p style="display: none; color: aqua;">aqua</p>
+    </div>
+    <div class="accordian">
+      <h3 style="cursor: pointer; color:chocolate;">My Color is</h3>
+      <p style="display: none; color:chocolate;">chocolate</p>
+    </div>
+    <div class="accordian">
+      <h3 style="cursor: pointer; color:crimson;">My Color is</h3>
+      <p style="display: none; color:crimson;">crimson</p>
+    </div>
+    <div class="accordian">
+      <h3 style="cursor: pointer; color:cyan;">My Color is</h3>
+      <p style="display: none; color:cyan;">cyan</p>
+    </div>
+    <div class="accordian">
+      <h3 style="cursor: pointer; color:gold;">My Color is</h3>
+      <p style="display: none; color:gold;">gold</p>
+    </div>
+    <div class="accordian">
+      <h3 style="cursor: pointer; color:tomato;">My Color is</h3>
+      <p style="display: none; color:tomato;">tomato</p>
+    </div>
+    <div class="accordian">
+      <h3 style="cursor: pointer; color:teal;">My Color is</h3>
+      <p style="display: none; color:teal;">teal</p>
+    </div>
+    <div class="accordian">
+      <h3 style="cursor: pointer; color:plum;">My Color is</h3>
+      <p style="display: none; color:plum;">plum</p>
+    </div>
+    <div class="accordian">
+      <h3 style="cursor: pointer; color:wheat;">My Color is</h3>
+      <p style="display: none; color:wheat;">wheat</p>
+    </div>
+    <div class="accordian">
+      <h3 style="cursor: pointer; color:olive;">My Color is</h3>
+      <p style="display: none; color: olive;">olive</p>
+    </div>
+    <div class="accordian">
+      <h3 style="cursor: pointer; color:hotpink;">My Color is</h3>
+      <p style="display: none; color: hotpink;">hotpink</p>
+    </div>
+    <div class="accordian">
+      <h3 style="cursor: pointer; color:burlywood;">My Color is</h3>
+      <p style="display: none; color: burlywood;">burlywood</p>
+    </div>
+  </div> 
+
+</body>
+<script>
+  let heading = document.querySelectorAll(".accordian h3")
+  heading.forEach((element) => {
+    element.addEventListener("click" , (event)=>{
+      let para = element.nextElementSibling;
+      if(para.style.display ==="none"){
+        para.style.display = "block";
+      }
+      else{
+        para.style.display ="none";
+      }
+    })
+  })
+</script>
+</html>
